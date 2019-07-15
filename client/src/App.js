@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <>
         <nav>
-          <button onClick={this.handleScrapeArticles}>Update article list!</button>
+          <button onClick={this.handleScrapeArticles}>View articles!</button>
         </nav>
         <div>
         {
