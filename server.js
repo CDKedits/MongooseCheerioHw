@@ -9,6 +9,6 @@ app.use(express.json())
 
 require(`./routes`)(app)
 
-require(`mongoose`).connect(`mongodb:localhost/news_db`)
+require(`mongoose`).connect(`mongodb://localhost/news_db`)
   .then(_ => app.listen(3001))
   .catch(e => console.log(e))
