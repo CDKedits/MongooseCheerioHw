@@ -15,7 +15,7 @@ class App extends Component {
   handleGetArticles = _ => {
     Article.getArticles()
       .then(({ data }) => this.setState({ articles: data }))
-      .catch(e => console.log(e)) 
+      .catch(e => console.log(e))
   }
 
   render() {
@@ -25,14 +25,14 @@ class App extends Component {
           <button onClick={this.handleScrapeArticles}>View articles!</button>
         </nav>
         <div>
-        {
-          this.state.articles.map(article => (
-            <div>
-              <a href={article.url}>Title: {article.headline}</a>
-              <p>Summary: {article.summary}</p>
-            </div>
-          ))
-        }
+          {
+            this.state.articles.map(article => (
+              <div>
+                <a href={article.url}>{article.headline}</a>
+                <p>{article.summary}</p>
+              </div>
+            ))
+          }
         </div>
       </>
     );
