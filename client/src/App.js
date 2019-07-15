@@ -14,7 +14,7 @@ class App extends Component {
 
   handleGetArticles = _ => {
     Article.getArticles()
-      .then(({ data }) => this.setState({ stacks: data }))
+      .then(({ data }) => this.setState({ articles: data }))
       .catch(e => console.log(e)) 
   }
 
@@ -28,9 +28,8 @@ class App extends Component {
         {
           this.state.articles.map(article => (
             <div>
-              <p>Title: {article.headline}</p>
+              <a href={article.url}>Title: {article.headline}</a>
               <p>Summary: {article.summary}</p>
-              <p>Link: {article.url}</p>
             </div>
           ))
         }
